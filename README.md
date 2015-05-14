@@ -1,9 +1,6 @@
-# grunt-este-watch [![Build Status](https://secure.travis-ci.org/steida/grunt-este-watch.png?branch=master)](http://travis-ci.org/steida/grunt-este-watch) [![Dependency Status](https://david-dm.org/steida/grunt-este-watch.png)](https://david-dm.org/steida/grunt-este-watch) [![devDependency Status](https://david-dm.org/steida/grunt-este-watch/dev-status.png)](https://david-dm.org/steida/grunt-este-watch#info=devDependencies)
-> Run predefined tasks whenever watched file changes. LiveReload included.
+# grunt-este-watch 
 
-__Update__: I extracted core watching functionality into separate [module](https://github.com/steida/este-watch).
-So you can use it with [gulpjs](http://gulpjs.com) for example. Tests are included.
-If you want to participate on open source and become famous, send me pull request to update this grunt-este-watch module.
+This a fork of the original grunt-este-watch repository, and is created for the Kerberos.io repository. Source code have been minified: removed support for livereload, only rely on file changes, don't check if file is locked anymore, update styling.
 
 ## Getting Started
 This plugin requires Grunt `~0.4.0`
@@ -40,20 +37,7 @@ Default:
 ]
 ```
 
-List of watched directories.
-
-#### options.livereload
-Type: `Object`
-Default:
-```js
-{
-  enabled: true,
-  port: 35729,
-  extensions: ['js', 'css']
-  key: null, // provide a filepath or Buffer for `key` and `cert` to enable SSL.
-  cert: null
-}
-```
+List of watched directories
 
 ### Examples
 
@@ -127,20 +111,6 @@ grunt.initConfig({
   }
 });
 ```
-
-#### Live Reloading
-Live reloading is built into the watch task and enabled by default.
-
-##### Enabling Live Reload in Your HTML
-Once you've started a live reload server you'll be able to access the live reload script. To enable live reload on your page, add a script tag before your closing `</body>` tag pointing to the `livereload.js` script:
-
-```html
-<script src="//localhost:35729/livereload.js"></script>
-```
-
-Feel free to add this script to your template situation and toggle with some sort of `dev` flag. Note that if you are using SSL in dev,
-you will need to add a `key` and `cert` config to `options.livereload`.
-
 ### FAQs
 
 #### What's wrong with official grunt-contrib-watch?
