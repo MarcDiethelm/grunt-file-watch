@@ -1,6 +1,6 @@
-# grunt-este-watch 
+# grunt-file-watch 
 
-This a fork of the original grunt-este-watch repository, and is created for the Kerberos.io repository. Source code have been minified: removed support for livereload, only rely on file changes, don't check if file is locked anymore, update styling.
+This a fork of the original grunt-file-watch repository, and is created for the Kerberos.io repository. Source code have been minified: removed support for livereload, only rely on file changes, don't check if file is locked anymore, update styling.
 
 ## Getting Started
 This plugin requires Grunt `~0.4.0`
@@ -61,8 +61,6 @@ esteWatch:
   '*': (filepath) ->
     return ['urequire:uberscoreUMD']
 ```
-
-From [github.com/steida/este](http://github.com/steida/este) Gruntfile.coffee.
 
 ```js
 grunt.initConfig({
