@@ -1,6 +1,6 @@
 {
   "name": "grunt-file-watch",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Run predefined tasks whenever watched file changes.",
   "main": "index.js",
   "repository": {

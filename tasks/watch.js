@@ -91,6 +91,7 @@ module.exports = function(grunt)
             var watcher = chokidar.watch(dir, {ignored: /[\/\\]\./ , ignoreInitial: true})
             watcher.on('all', function(event, filepath, stats)
             {
+                var filename = path.basename(filepath)
                 onDirChange(event, filename, dir);
             });
             
