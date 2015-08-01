@@ -8,7 +8,8 @@ module.exports = function(grunt)
     var path = require('path');
     var tinylr = require('tiny-lr-fork');
     var semver = require('semver');
-
+    var chokidar = require('chokidar');
+    
     var RESTART_WATCHERS_DEBOUNCE = 10;
     var WAIT_FOR_UNLOCK_INTERVAL = 10;
     var WAIT_FOR_UNLOCK_TRY_LIMIT = 50;
@@ -87,10 +88,12 @@ module.exports = function(grunt)
     {
         dirs.forEach(function(dir)
         {
-            var watcher = fs.watch(dir, {'persistent': true}, function(event, filename)
+            var watcher = chokidar.watch(dir, {ignored: /[\/\\]\./ , ignoreInitial: true})
+            watcher.on('all', function(event, filepath, stats)
             {
                 onDirChange(event, filename, dir);
             });
+            
             watchers.push(watcher);
         });
     };
