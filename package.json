@@ -1,6 +1,6 @@
 {
   "name": "grunt-file-watch",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Run predefined tasks whenever watched file changes.",
   "main": "index.js",
   "repository": {
@@ -14,10 +14,10 @@
   ],
   "dependencies": {
     "semver": "^3.0.1",
-    "tiny-lr-fork": "0.0.5"
+    "tiny-lr-fork": "0.0.5",
+    "chokidar": "^0.8.2"
   },
   "devDependencies": {
-    "chokidar": "^0.8.2",
     "grunt": "^0.4.4",
     "grunt-contrib-jshint": "^0.10.0",
     "grunt-release": "^0.7.0"
