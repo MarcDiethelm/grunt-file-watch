@@ -88,11 +88,16 @@ module.exports = function(grunt)
     {
         dirs.forEach(function(dir)
         {
-            var watcher = chokidar.watch(dir, {ignored: /[\/\\]\./ , ignoreInitial: true, persistent: true})
+            /*var watcher = chokidar.watch(dir, {ignored: /[\/\\]\./ , ignoreInitial: true, persistent: true})
             watcher.on('all', function(event, filepath, stats)
             {
                 var filename = path.basename(filepath)
                 onDirChange(event, filepath, dir);
+            });*/
+            
+            var watcher = fs.watch(dir, {'persistent': true}, function(event, filename)
+            {
+                onDirChange(event, filename, dir);
             });
             
             watchers.push(watcher);
