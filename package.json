@@ -15,7 +15,7 @@
   "dependencies": {
     "semver": "^3.0.1",
     "tiny-lr-fork": "0.0.5",
-    "chokidar": "^0.8.2"
+    "chokidar": "^1.0.5"
   },
   "devDependencies": {
     "grunt": "^0.4.4",
